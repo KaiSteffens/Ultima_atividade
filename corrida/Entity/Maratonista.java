@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
@@ -18,6 +19,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 
 public class Maratonista {
     @Id
@@ -30,7 +32,7 @@ public class Maratonista {
     private String rg;
     private String grupoSanguineo;
 
-    @JsonIgnore
+
   @OneToMany(mappedBy = "maratonista")
 
    private List<Inscricao> inscricaos;

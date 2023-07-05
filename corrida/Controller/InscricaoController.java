@@ -1,5 +1,6 @@
 package com.example.corrida.Controller;
 
+import com.example.corrida.Entity.Enum.Categorias;
 import com.example.corrida.Entity.Inscricao;
 import com.example.corrida.Entity.Maratonista;
 import com.example.corrida.Service.InscricaoService;
@@ -18,9 +19,10 @@ public class InscricaoController {
     @Autowired
     private InscricaoService inscricaoService;
 
-    @PostMapping("inscricao")
+    @PostMapping("/inscricao")
     public ResponseEntity<Inscricao> salvarInscricao(@RequestBody Inscricao inscricao) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(inscricaoService.SalvarInscricao(inscricao));
+        Inscricao inscricaoSalva = inscricaoService.SalvarInscricao(inscricao);
+        return ResponseEntity.status(HttpStatus.CREATED).body(inscricaoSalva);
     }
 
     @GetMapping("inscricao/{id}")

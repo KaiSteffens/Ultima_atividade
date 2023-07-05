@@ -6,8 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Getter
@@ -20,7 +18,7 @@ public class Inscricao {
     @Id
 
     private long id;
-    private String valorInscricao;
+    private Double valorInscricao;
 
 @JsonIgnore
    @ManyToOne
